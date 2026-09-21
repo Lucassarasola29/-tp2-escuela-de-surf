@@ -33,7 +33,11 @@ public class Alumno {
     }
 
     public void setNivel(String nivel){
-        this.nivel = nivel;
+        if(nivel == "intermedio" || nivel == "principiante"){
+            this.nivel = nivel;
+        }else{
+            System.out.println("Error, el nivel no existe");
+        }
     }
 
     public void setNumeroAlumno(int numeroAlumno){
@@ -48,8 +52,14 @@ public class Alumno {
 
         if (turno != null) {
             this.inscripciones[cantInscripciones] = new Inscripcion(Turno);
+            this.cantInscripciones++;
         } else {
             System.out.println("Error, no se puede inscribirse a un turno inexistente");
+        }
+    }
+
+    public String descripcion(){
+        return "Nombre: " + nombre + "Apellido: " + apellido + "DNI: " + DNI + "Nivel: " + nivel + "Numero Alumno: " + numeroAlumno + "Cantidad de inscripciones: " +cantInscripciones;
     }
 
 }
