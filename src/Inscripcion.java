@@ -8,8 +8,9 @@ public class Inscripcion {
     private Tabla tabla;
     private boolean asistencia;
 
-    public Inscripcion(Turno turno) {
+    public Inscripcion(Turno turno, Tabla tabla) {
         this.turno = turno;
+        this.tabla = tabla;
         this.asistencia = false;
         DateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
         this.fecha = fecha.format(new Date());
