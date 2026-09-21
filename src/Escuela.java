@@ -63,18 +63,21 @@ public class Escuela {
 	}
 
 	public void mostrarTurnos() {
+		System.out.println("Escuela : " + this.nombre + " Turnos:");
 		for (Turno turno : turnos) {
 			System.out.println(turno.descripcion());
 		}
 	}
 
 	public void mostrarTablas() {
+		System.out.println("Escuela : " + this.nombre + " Tablas:");
 		for (Tabla tabla : tablas) {
 			System.out.println(tabla.descripcion());
 		}
 	}
 
 	public void mostrarAlumnos() {
+		System.out.println("Escuela : " + this.nombre + " Alumnos:");
 		for (Alumno alumno : alumnos) {
 			System.out.println(alumno.descripcion());
 		}
