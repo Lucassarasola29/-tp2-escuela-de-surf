@@ -3,16 +3,16 @@ public class Turno {
     private String fecha; 
     private String horario; 
     private Instructor instructor;
-    private int cupo = 0;  
+    private int cupo; 
     private Tabla tablas[];
     private Inscripcion[] inscripciones;
     private int cantTablas;
     private int cantInscripciones;
     
-    public Turno (String fecha, String horario, int cupo) {
+    public Turno (String fecha, String horario) {
         this.fecha = fecha; 
         this.horario = horario;
-        this.cupo = cupo; 
+        this.cupo = 0; 
         this.tablas = new Tabla [CUPO_MAXIMO];
         this.inscripciones = new Inscripcion [CUPO_MAXIMO];
         this.cantTablas = 0;
