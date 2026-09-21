@@ -1,5 +1,3 @@
-package src;
-
 public class Tabla {
 	private String codigo;
 	private double largoEnPies;
