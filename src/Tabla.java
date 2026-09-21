@@ -1,15 +1,15 @@
 public class Tabla {
-	private int codigo;
+	private String codigo;
 	private double largoEnPies;
 	private boolean disponible;
 
-	public Tabla(int codigo, double largoEnPies) {
+	public Tabla(String codigo, double largoEnPies) {
 		this.codigo = codigo;
 		this.setLargoEnPies(largoEnPies);
 		this.disponible = true;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return this.codigo;
 	}
 
