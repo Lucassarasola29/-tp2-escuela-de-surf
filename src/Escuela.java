@@ -22,7 +22,7 @@ public class Escuela {
 
 	public String descripcion() {
 		return "Escuela: " + this.nombre + "Playa: " + this.playa + "Cantidad turnos: " + this.cantTurnos
-				+ "Cantidad tablas: " + this.cantTablas;
+				+ "Cantidad tablas: " + this.cantTablas + "Cantidad alumnos: " + cantAlumnos;
 	}
 
 	public void crearTurno(String fecha, String horario) {
@@ -43,14 +43,11 @@ public class Escuela {
 		}
 	}
 
-	public void repartirTablas() {
-
-	}
-
 	public void registrarAlumno(Alumno alumno) {
 		if (alumno != null) {
+			alumno.setNumeroAlumno(cantAlumnos + 1);
 			this.alumnos[cantAlumnos] = alumno;
-			this.cantAlumnos++;
+			cantAlumnos++;
 		} else {
 			System.out.println("No se puede añadir un alumno nulo");
 		}
