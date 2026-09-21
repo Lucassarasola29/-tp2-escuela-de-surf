@@ -10,6 +10,7 @@ public class Instructor {
         this.apellido = apellido; 
         this.numeroMatricula = numeroMatricula; 
         this.cantTurnos = 0;
+
         
 
     }
@@ -24,6 +25,7 @@ public class Instructor {
     public int getnumeroMatricula() {
         return this.numeroMatricula; 
     }
+
     
     public int getCantTurnos () {
         return cantTurnos;
@@ -47,5 +49,9 @@ public class Instructor {
     public String descripcion(){
         return "Instructor: " + nombre + "" + apellido + "" + " | Matricula: " + numeroMatricula; 
     }
+
+
+
+
 
 }
