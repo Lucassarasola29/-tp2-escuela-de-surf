@@ -61,4 +61,22 @@ public class Escuela {
 			System.out.println("No se puede añadir una tabla nula");
 		}
 	}
+
+	public void mostrarTurnos() {
+		for (Turno turno : turnos) {
+			System.out.println(turno.descripcion());
+		}
+	}
+
+	public void mostrarTablas() {
+		for (Tabla tabla : tablas) {
+			System.out.println(tabla.descripcion());
+		}
+	}
+
+	public void mostrarAlumnos() {
+		for (Alumno alumno : alumnos) {
+			System.out.println(alumno.descripcion());
+		}
+	}
 }
