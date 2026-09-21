@@ -33,6 +33,7 @@ public class Instructor {
     public void agregarTurno(Turno turno) {
         if (cantTurnos < turnos.length) {
             this.turnos[cantTurnos] = turno;
+            turno.setInstructor(this);
             this.cantTurnos++;
         } else {
             System.out.println("Error: el instructor " + apellido + "no se puede tener mas de " + turnos.length

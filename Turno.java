@@ -58,11 +58,9 @@ public class Turno {
         }
         for (int i = 0; i < cantInscripciones; i++) {
             Tabla tablaOcupada = inscripciones[i].getTabla();
-
             if (tablaOcupada != null && tablaOcupada.equals(tabla)) {
                 return false;
             }
-
         }
         return true;
     }
@@ -71,6 +69,19 @@ public class Turno {
         String nombreInstructor = (instructor != null) ? instructor.getApellido() : "Sin asignar";
         return "Turno del " + fecha + " a las " + horario + " Hs | Instructor: " + nombreInstructor + "  | Cupo: "
                 + cantInscripciones;
+    }
+
+    public double porcentajeAsistencia() {
+        int asistencias = 0;
+        for (int i = 0; i < this.cantInscripciones; i++) {
+            if (this.inscripciones[i].asistencia()) {
+                asistencias++;
+            }
+        }
+        if (asistencias == 0) {
+            return 0.00;
+        }
+        return (double) (asistencias * 100) / this.cantInscripciones;
     }
 
 }

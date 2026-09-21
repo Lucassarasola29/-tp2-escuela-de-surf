@@ -32,6 +32,10 @@ public class Alumno {
         return this.nivel;
     }
 
+    public Inscripcion[] getInscripciones() {
+        return this.inscripciones;
+    }
+
     public void setNivel(String nivel) {
         if (nivel == "intermedio" || nivel == "principiante") {
             this.nivel = nivel;
@@ -53,7 +57,7 @@ public class Alumno {
         if (turno == null) {
             System.out.println("Error, no se puede inscribirse a un turno inexistente");
             return;
-        } else if (tabla == null || tabla.disponible() == false) {
+        } else if (tabla == null || tabla.disponible() == false || turno.tablaDisponible(tabla) == false) {
             System.out.println("Error, no se puede inscribirse a un turno con una tabla no disponible");
             return;
         } else {
@@ -64,9 +68,15 @@ public class Alumno {
 
     }
 
+    public void mostrarInscripciones() {
+        for (int i = 0; i < cantInscripciones; i++) {
+            System.out.println(this.inscripciones[i].descripcion());
+        }
+    }
+
     public String descripcion() {
-        return "Nombre: " + nombre + "Apellido: " + apellido + "DNI: " + DNI + "Nivel: " + nivel + "Numero Alumno: "
-                + numeroAlumno + "Cantidad de inscripciones: " + cantInscripciones;
+        return "Nombre: " + nombre + " Apellido: " + apellido + " DNI: " + DNI + " Nivel: " + nivel + " Numero Alumno: "
+                + numeroAlumno + " Cantidad de inscripciones: " + cantInscripciones;
     }
 
 }

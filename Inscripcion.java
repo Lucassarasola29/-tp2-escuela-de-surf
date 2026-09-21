@@ -49,7 +49,8 @@ public class Inscripcion {
             estado = "No asistio";
         }
 
-        return "fecha: " + fecha + "Turno: " + turno.getHorario() + "Tabla: " + tabla.getCodigo() + "Asistencia: "
+        return "fecha: " + fecha + " Turno: " + turno.getHorario() + "Hs " + " Tabla: " + tabla.getCodigo()
+                + " Asistencia: "
                 + estado;
     }
 }

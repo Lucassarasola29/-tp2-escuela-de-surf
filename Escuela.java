@@ -48,9 +48,9 @@ public class Escuela {
 
 	public void asignarTurno(Instructor instructor) {
 		if (instructor != null) {
-			for (Turno turno : turnos) {
-				if (turno.getInstructor() == null) {
-					instructor.agregarTurno(turno);
+			for (int i = 0; i < this.cantTurnos; i++) {
+				if (this.turnos[i].getInstructor() == null) {
+					instructor.agregarTurno(this.turnos[i]);
 					return;
 				}
 			}
@@ -78,24 +78,34 @@ public class Escuela {
 		}
 	}
 
+	public int tablasEnReparacion() {
+		int resultado = 0;
+		for (int i = 0; i < this.cantTablas; i++) {
+			if (this.tablas[i].disponible() == false) {
+				resultado++;
+			}
+		}
+		return resultado;
+	}
+
 	public void mostrarTurnos() {
 		System.out.println("Escuela : " + this.nombre + " Turnos:");
-		for (Turno turno : turnos) {
-			System.out.println(turno.descripcion());
+		for (int i = 0; i < this.cantTurnos; i++) {
+			System.out.println(this.turnos[i].descripcion());
 		}
 	}
 
 	public void mostrarTablas() {
 		System.out.println("Escuela : " + this.nombre + " Tablas:");
-		for (Tabla tabla : tablas) {
-			System.out.println(tabla.descripcion());
+		for (int i = 0; i < this.cantTablas; i++) {
+			System.out.println(this.tablas[i].descripcion());
 		}
 	}
 
 	public void mostrarAlumnos() {
 		System.out.println("Escuela : " + this.nombre + " Alumnos:");
-		for (Alumno alumno : alumnos) {
-			System.out.println(alumno.descripcion());
+		for (int i = 0; i < this.cantAlumnos; i++) {
+			System.out.println(this.alumnos[i].descripcion());
 		}
 	}
 }
