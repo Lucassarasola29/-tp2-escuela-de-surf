@@ -81,7 +81,7 @@ public class Turno {
 
     public String descripcion () {
         String nombreInstructor = (instructor != null) ? instructor.getApellido() : "Sin asignar"; 
-        return "Turno del " + fecha + " a las " + horario + " Hs | Instructor: " +  " | Cupo: " + cupo;
+        return "Turno del " + fecha + " a las " + horario + " Hs | Instructor: " +  nombreInstructor + "  | Cupo: " + cupo;
     }
     
 
