@@ -1,13 +1,18 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Inscripcion {
     private Turno turno;
     private String fecha;
     private Tabla tabla;
     private boolean asistencia;
 
-    public Inscripcion(Turno turno, String fecha) {
+    public Inscripcion(Turno turno) {
         this.turno = turno;
-        this.fecha = fecha;
         this.asistencia = false;
+        DateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
+        this.fecha = fecha.format(new Date());
     }
 
     public void setTabla(Tabla tabla) {
@@ -30,5 +35,16 @@ public class Inscripcion {
         this.asistencia = asistencia;
     }
 
+    public String descripcion(){
+        String estado;
+
+        if(asistencia == true){
+            estado = "Asistio";
+        }else{
+            estado = "No asistio";
+        }
+        
+        return "fecha: " + fecha + "Turno: " + turno.getHorario() + "Tabla: " + tabla.getCodigo() + "Asistencia: " + estado;
+    }
 }
 
