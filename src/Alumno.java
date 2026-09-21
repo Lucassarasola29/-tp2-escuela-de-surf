@@ -48,14 +48,20 @@ public class Alumno {
         return this.numeroAlumno;
     }
     
-    public void inscribirse(Turno turno){
+    public void inscribirse(Turno turno, Tabla tabla){
 
-        if (turno != null) {
-            this.inscripciones[cantInscripciones] = new Inscripcion(Turno);
-            this.cantInscripciones++;
-        } else {
+        if (turno == null) {
             System.out.println("Error, no se puede inscribirse a un turno inexistente");
+            return;
+        } else if(tabla == null || tabla.disponible() == false){
+            System.out.println("Error, no se puede inscribirse a un turno con una tabla no disponible");
+            return;
+        }else{
+            this.inscripciones[cantInscripciones] = new Inscripcion(turno, tabla);
+            this.cantInscripciones++;
         }
+            
+
     }
 
     public String descripcion(){
