@@ -6,66 +6,66 @@ public class Alumno {
     private int numeroAlumno;
     private int cantInscripciones;
     private Inscripcion[] inscripciones;
-    
 
-    public Alumno(String nombre, String apellido, String DNI, String nivel){
+    public Alumno(String nombre, String apellido, String DNI, String nivel) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.DNI = DNI;
         this.nivel = nivel;
         this.cantInscripciones = 0;
+        this.inscripciones = new Inscripcion[100];
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return this.nombre;
     }
 
-    public String getApellido(){
+    public String getApellido() {
         return this.apellido;
     }
 
-    public String getDNI(){
+    public String getDNI() {
         return this.DNI;
     }
 
-    public String getNivel(){
+    public String getNivel() {
         return this.nivel;
     }
 
-    public void setNivel(String nivel){
-        if(nivel == "intermedio" || nivel == "principiante"){
+    public void setNivel(String nivel) {
+        if (nivel == "intermedio" || nivel == "principiante") {
             this.nivel = nivel;
-        }else{
+        } else {
             System.out.println("Error, el nivel no existe");
         }
     }
 
-    public void setNumeroAlumno(int numeroAlumno){
+    public void setNumeroAlumno(int numeroAlumno) {
         this.numeroAlumno = numeroAlumno;
     }
 
-    public int getNumeroAlumno(){
+    public int getNumeroAlumno() {
         return this.numeroAlumno;
     }
-    
-    public void inscribirse(Turno turno, Tabla tabla){
+
+    public void inscribirse(Turno turno, Tabla tabla) {
 
         if (turno == null) {
             System.out.println("Error, no se puede inscribirse a un turno inexistente");
             return;
-        } else if(tabla == null || tabla.disponible() == false){
+        } else if (tabla == null || tabla.disponible() == false) {
             System.out.println("Error, no se puede inscribirse a un turno con una tabla no disponible");
             return;
-        }else{
+        } else {
             this.inscripciones[cantInscripciones] = new Inscripcion(turno, tabla);
             this.cantInscripciones++;
         }
-            
 
     }
 
-    public String descripcion(){
-        return "Nombre: " + nombre + "Apellido: " + apellido + "DNI: " + DNI + "Nivel: " + nivel + "Numero Alumno: " + numeroAlumno + "Cantidad de inscripciones: " +cantInscripciones;
+    public String descripcion() {
+        return "Nombre: " + nombre + "Apellido: " + apellido + "DNI: " + DNI + "Nivel: " + nivel + "Numero Alumno: "
+                + numeroAlumno + "Cantidad de inscripciones: " + cantInscripciones;
     }
 
 }
