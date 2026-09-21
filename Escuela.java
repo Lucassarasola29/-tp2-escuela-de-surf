@@ -21,13 +21,29 @@ public class Escuela {
 	}
 
 	public String descripcion() {
-		return "Escuela: " + this.nombre + "Playa: " + this.playa + "Cantidad turnos: " + this.cantTurnos
-				+ "Cantidad tablas: " + this.cantTablas + "Cantidad alumnos: " + cantAlumnos;
+		return "Escuela: " + this.nombre + " Playa: " + this.playa + " Cantidad turnos: " + this.cantTurnos
+				+ " Cantidad tablas: " + this.cantTablas + " Cantidad alumnos: " + cantAlumnos;
 	}
 
 	public void crearTurno(String fecha, String horario) {
 		this.turnos[cantTurnos] = new Turno(fecha, horario);
 		this.cantTurnos++;
+	}
+
+	public Turno[] getTurnos() {
+		return this.turnos;
+	}
+
+	public int getCantTurnos() {
+		return this.cantTurnos;
+	}
+
+	public Tabla[] getTablas() {
+		return this.tablas;
+	}
+
+	public int getCantTablas() {
+		return this.cantTablas;
 	}
 
 	public void asignarTurno(Instructor instructor) {
