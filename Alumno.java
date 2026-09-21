@@ -58,6 +58,7 @@ public class Alumno {
             return;
         } else {
             this.inscripciones[cantInscripciones] = new Inscripcion(turno, tabla);
+            turno.agregarInscripcion(this.inscripciones[cantInscripciones]);
             this.cantInscripciones++;
         }
 
