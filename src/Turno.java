@@ -6,6 +6,8 @@ public class Turno {
     private int cupo = 0;  
     private Tabla tablas[];
     private Inscripcion[] inscripciones;
+    private int cantTablas;
+    private int cantInscripciones;
     
     public Turno (String fecha, String horario, int cupo) {
         this.fecha = fecha; 
@@ -13,6 +15,8 @@ public class Turno {
         this.cupo = cupo; 
         this.tablas = new Tabla [CUPO_MAXIMO];
         this.inscripciones = new Inscripcion [CUPO_MAXIMO];
+        this.cantTablas = 0;
+        this.cantInscripciones = 0;
   
 
 
@@ -34,9 +38,39 @@ public class Turno {
     public Instructor getInstructor () {
         return instructor;
     }
+    public int getCantTablas (){
+        return cantTablas;
+    }
+
+    public int getCantInscripciones (){
+        return cantInscripcione; 
+    }
+
+    public void agregarTabla(Tabla tabla) {
+        if (tabla == null) {
+            System.out.println("Error: No se puede agregar una tabla nula.");
+        } else if (cantTablas < tablas.length) {
+            tablas[cantTablas] = tabla;
+            cantTablas++;
+        } else {
+            System.out.println("Error: Se alcanzó el límite máximo de tablas asignadas al turno.");
+        }
+    }
+
+    public void agregarInscripcion(Inscripcion inscripcion) {
+        if (inscripcion == null) {
+            System.out.println("Error: No se puede agregar una inscripción nula.");
+        } else if (cantInscripciones < cupo) {
+            inscripciones[cantInscripciones] = inscripcion;
+            cantInscripciones++;
+        } else {
+            System.out.println("Error: El turno no tiene cupo disponible para más inscripciones.");
+        }
+    }
 
 
-    public void setInstructor (Instructor instructor) {
+
+     public void setInstructor (Instructor instructor) {
         if (instructor != null) {
             this.instructor = instructor;
         } else {
@@ -46,7 +80,8 @@ public class Turno {
     }
 
     public String descripcion () {
-         return "Turno del " + fecha + " a las " + horario + " Hs | Instructor: " +  " | Cupo: " + cupo;
+        String nombreInstructor = (instructor != null) ? instructor.getApellido() : "Sin asignar"; 
+        return "Turno del " + fecha + " a las " + horario + " Hs | Instructor: " +  " | Cupo: " + cupo;
     }
     
 
