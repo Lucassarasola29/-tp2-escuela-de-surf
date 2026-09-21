@@ -35,6 +35,16 @@ public class Inscripcion {
         this.asistencia = asistencia;
     }
 
+    public String descripcion(){
+        String estado;
 
+        if(asistencia == true){
+            estado = "Asistio";
+        }else{
+            estado = "No asistio";
+        }
+        
+        return "fecha: " + fecha + "Turno: " + turno.getHorario() + "Tabla: " + tabla.getCodigo() + "Asistencia: " + estado;
+    }
 }
 
