@@ -1,5 +1,3 @@
-package src;
-
 public class Escuela {
 	private static final int MAX_TABLAS = 100;
 	private static final int MAX_TURNOS = 100;
