@@ -20,32 +20,36 @@ public class Inscripcion {
         this.tabla = tabla;
     }
 
-    public String getFecha(){
+    public Tabla getTabla() {
+        return this.tabla;
+    }
+
+    public String getFecha() {
         return this.fecha;
     }
 
-    public Turno getTurno(){
+    public Turno getTurno() {
         return this.turno;
     }
 
-    public boolean asistencia(){
+    public boolean asistencia() {
         return this.asistencia;
     }
 
-    public void setAsistencia(boolean asistencia){
+    public void setAsistencia(boolean asistencia) {
         this.asistencia = asistencia;
     }
 
-    public String descripcion(){
+    public String descripcion() {
         String estado;
 
-        if(asistencia == true){
+        if (asistencia == true) {
             estado = "Asistio";
-        }else{
+        } else {
             estado = "No asistio";
         }
-        
-        return "fecha: " + fecha + "Turno: " + turno.getHorario() + "Tabla: " + tabla.getCodigo() + "Asistencia: " + estado;
+
+        return "fecha: " + fecha + "Turno: " + turno.getHorario() + "Tabla: " + tabla.getCodigo() + "Asistencia: "
+                + estado;
     }
 }
-
